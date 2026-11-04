@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deliburgamo | Cocina bergamasca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#1F3A2E; --verde-claro:#2E5242; --azafran:#E3A92B; --hueso:#F5F6F0; --tinta:#1B2A22; --suave:#5A6A60; --linea:#D9DDD2; --tarjeta:#FFFFFF;
+  --fd:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif; --fb:"Lora",Georgia,serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--hueso:#16211B;--tinta:#EEF1E8;--suave:#A4B2A8;--linea:#2C3B32;--tarjeta:#1E2C24;--verde:#0F1E17;--verde-claro:#27463A}}
+:root[data-theme="dark"]{--hueso:#16211B;--tinta:#EEF1E8;--suave:#A4B2A8;--linea:#2C3B32;--tarjeta:#1E2C24;--verde:#0F1E17;--verde-claro:#27463A}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--hueso);color:var(--tinta);font:18px/1.7 var(--fb)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--azafran);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--verde);border-bottom:1px solid var(--verde-claro)}
+nav .wrap{display:flex;gap:20px;align-items:center;justify-content:space-between;height:56px}
+nav b{font:800 20px var(--fd);color:#fff}
+nav div{display:flex;gap:18px;overflow-x:auto}
+nav a{font:500 15px var(--fd);color:#E6EBE2;text-decoration:none;padding:6px 2px;white-space:nowrap}
+nav a:hover{color:var(--azafran)}
+header{background:var(--verde);color:#fff;padding:72px 0 88px}
+header h1{font:800 clamp(56px,13vw,148px)/.9 var(--fd);letter-spacing:-.03em;margin:0 0 24px;color:var(--azafran)}
+header p{font-size:clamp(20px,3vw,28px);max-width:30ch;margin:0 0 32px;color:#F1F4EC}
+.btn{display:inline-block;font:700 17px var(--fd);background:var(--azafran);color:#1B2A22;padding:14px 26px;border-radius:999px;text-decoration:none}
+.btn:hover{background:#F0BC4A}
+section{padding:72px 0}
+h2{font:800 clamp(30px,5vw,44px)/1.1 var(--fd);letter-spacing:-.02em;margin:0 0 20px}
+.sobre{display:grid;gap:32px;grid-template-columns:1fr}
+@media(min-width:760px){.sobre{grid-template-columns:1fr 1.4fr;align-items:start}}
+.mision{border-left:6px solid var(--azafran);padding:4px 0 4px 20px;font-size:21px}
+.sobre p{max-width:62ch;margin:0 0 14px}
+.menu{background:var(--tarjeta);border-block:1px solid var(--linea)}
+.platos{list-style:none;margin:28px 0 0;padding:0}
+.plato{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding:24px 0;border-bottom:1px solid var(--linea)}
+.plato:first-child{border-top:1px solid var(--linea)}
+.plato h3{font:700 24px/1.2 var(--fd);margin:0}
+.plato p{grid-column:1;margin:0;color:var(--suave);max-width:56ch}
+.precio{grid-row:1/3;grid-column:2;font:800 28px var(--fd);align-self:center;white-space:nowrap}
+.nota{margin-top:18px;font-size:15px;color:var(--suave)}
+.higiene .lista{display:grid;gap:14px;grid-template-columns:1fr;margin:28px 0;padding:0;list-style:none}
+@media(min-width:760px){.higiene .lista{grid-template-columns:1fr 1fr}}
+.lista li{display:flex;gap:14px;padding:18px;background:var(--tarjeta);border:1px solid var(--linea);border-radius:10px}
+.lista li::before{content:"✓";flex:none;width:28px;height:28px;border-radius:50%;background:var(--verde-claro);color:#fff;display:grid;place-items:center;font:700 15px var(--fd)}
+.lista strong{display:block;font:700 18px var(--fd)}
+.lista span{font-size:16px;color:var(--suave)}
+footer{background:var(--verde);color:#DDE4D8;padding:36px 0;font-size:15px}
+footer b{font:800 20px var(--fd);color:var(--azafran)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Principal"><div class="wrap"><b>Deliburgamo</b><div><a href="#quienes-somos">Quiénes somos</a><a href="#menu">Menú</a><a href="#higiene">Higiene</a></div></div></nav>
+
+<header>
+  <div class="wrap">
+    <h1>Deliburgamo</h1>
+    <p>Cocina de Bérgamo, hecha despacio y servida con cariño.</p>
+    <a class="btn" href="#menu">Ver el menú</a>
+  </div>
+</header>
+
+<main>
+<section id="quienes-somos">
+  <div class="wrap sobre">
+    <div>
+      <h2>Quiénes somos</h2>
+      <p class="mision"><strong>Nuestra misión:</strong> llevar a tu mesa la cocina casera del norte de Italia, con ingredientes frescos, recetas honestas y un servicio cercano.</p>
+    </div>
+    <div>
+      <p>Deliburgamo nace del gusto por la buena comida de siempre: hamburguesas jugosas, completos bien servidos y postres de familia.</p>
+      <p>Cocinamos cada plato al momento, cuidamos la calidad de lo que compramos y tratamos a cada comensal como si fuera de la casa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="menu">
+  <div class="wrap">
+    <h2>Menú digital</h2>
+    <p>Tres platos, preparados al momento. Precios finales en pesos chilenos, con IVA incluido.</p>
+    <ul class="platos">
+      <li class="plato"><h3>Tiramisú de la casa</h3><p>Bizcocho al café, crema de mascarpone y cacao amargo.</p><span class="precio">$5.900</span></li>
+      <li class="plato"><h3>Hamburguesa Deliburgamo</h3><p>Carne de vacuno a la plancha, queso fundido, lechuga, tomate y pan de masa madre.</p><span class="precio">$9.900</span></li>
+      <li class="plato"><h3>Completos</h3><p>Vienesa, tomate, palta y mayonesa casera en pan fresco.</p><span class="precio">$4.500</span></li>
+    </ul>
+    <p class="nota">Si tienes alguna alergia alimentaria, avísanos antes de pedir.</p>
+  </div>
+</section>
+
+<section id="higiene" class="higiene">
+  <div class="wrap">
+    <h2>Compromiso de higiene</h2>
+    <p>Trabajamos conforme al Reglamento Sanitario de los Alimentos (Decreto Supremo N° 977 de 1996, Ministerio de Salud). Esto es lo que hacemos todos los días:</p>
+    <ul class="lista">
+      <li><div><strong>Manipuladores cuidadosos</strong><span>Lavado de manos frecuente, ropa limpia y cabello cubierto en cocina.</span></div></li>
+      <li><div><strong>Cadena de frío controlada</strong><span>Revisamos las temperaturas de refrigeración y conservamos cada alimento como corresponde.</span></div></li>
+      <li><div><strong>Sin contaminación cruzada</strong><span>Separamos alimentos crudos y cocidos, con utensilios y tablas distintos.</span></div></li>
+      <li><div><strong>Agua potable y superficies limpias</strong><span>Limpiamos y sanitizamos equipos, utensilios y áreas de trabajo en cada turno.</span></div></li>
+      <li><div><strong>Proveedores confiables</strong><span>Recibimos y almacenamos las materias primas revisando su estado y su origen.</span></div></li>
+      <li><div><strong>Control de plagas</strong><span>Mantenemos el local ordenado y protegido, con revisiones periódicas.</span></div></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><b>Deliburgamo</b><br>Cocina de Bérgamo, hecha despacio y servida con cariño.</div></footer>
+</body>
+</html>
